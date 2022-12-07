@@ -22,10 +22,10 @@ class UserSchema {
     static get schema() {
         var schema: Schema<IUser> = new Schema(
             {
-                _id: { type: String, trim: true, required: [true, "id is required"], unique: true, },
+                _id: { type: String, trim: true, required: [true, "id is required"] },
                 email: {
                     type: String,
-                    validate: [validator.isEmail, "Please provide a valid email address"],
+                    //validate: [validator.isEmail, "Please provide a valid email address"],
                     required: [true, "email is required"],
                     unique: true,
                     trim: true,

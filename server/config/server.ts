@@ -27,7 +27,7 @@ export class Server {
     */
     public routes(): void {
         this.app.use("/api/accounts", AccountRoutes);
-        this.app.use("/api/reddit", CoinRoutes);
+        this.app.use("/api/reddit", RedditRoutes);
     }
 
     /** 
