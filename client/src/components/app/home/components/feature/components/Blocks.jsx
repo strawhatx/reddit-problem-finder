@@ -41,7 +41,7 @@ const HomeFeatureBlocks = () => {
                 padding: "65px 25px 35px",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                Items: "center",
                 borderRadius: "20px 0",
                 boxShadow: "7px 5px 30px #48497926",
               }}
@@ -50,7 +50,7 @@ const HomeFeatureBlocks = () => {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "center",
+                  Items: "center",
                   height: 75,
                   width: 75,
                   borderRadius: 0,
@@ -80,7 +80,7 @@ const HomeFeatureBlocks = () => {
                 variant="h4"
                 component="div"
                 sx={{
-                  textAlign: "center",
+                  text: "center",
                   mb: 1.5,
                 }}
               >
@@ -90,7 +90,7 @@ const HomeFeatureBlocks = () => {
                 variant="p"
                 component="div"
                 sx={{
-                  textAlign: "center",
+                  text: "center",
                   pb: theme.spacing(1),
                   fontSize: 18,
                 }}

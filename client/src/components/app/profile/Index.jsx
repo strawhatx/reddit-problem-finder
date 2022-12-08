@@ -1,50 +1,26 @@
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
-import { useTheme } from "@mui/system";
-import { useTranslation } from "react-i18next";
+import { Container } from "react-bootstrap";
 import UserProfileBasicInfo from "./basic-info/Index";
 import UserProfileDelete from "./delete/Index";
 import UserProfileChangePassword from "./change-password/Index";
 
 const UserProfileView = () => {
-  const theme = useTheme();
-  const { t } = useTranslation();
-
   return (
     <>
-      {/** Hero */}
-      <Box
-        className="hero"
-        sx={{
-          pt: theme.spacing(12),
-          pb: theme.spacing(15),
-          bgcolor: theme.palette.primary.main,
-          color: theme.palette.primary.contrastText,
-        }}
-      >
+      <div className="pt-12 pb-15 bg-primary">
         <Container maxWidth="md">
-          <Typography
-            variant="h4"
-            component="div"
-            sx={{
-              mb: theme.spacing(0.6),
-              py: theme.spacing(5),
-              textAlign: { xs: "center", sm: "left" },
-            }}
-          >
-            {t("Account")}
-          </Typography>
+          <h4 className="mb-1 py-5 text-left">Account</h4>
         </Container>
-      </Box>
+      </div>
 
       {/** Settings */}
-      <Box sx={{ mt: -14, pb: 1 }}>
+      <div className="pb-1" sx={{ mt: -14, pb: 1 }}>
         <Container maxWidth="md">
           <UserProfileBasicInfo />
           <UserProfileChangePassword />
           <UserProfileDelete />
         </Container>
-      </Box>
+      </div>
     </>
   );
 };

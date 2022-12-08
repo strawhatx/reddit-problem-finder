@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Button } from "react-bootstrap";
 
 const UserProfileDeleteView = () => {
   const handleDelete = () => {
@@ -8,21 +8,15 @@ const UserProfileDeleteView = () => {
   };
 
   return (
-    <Box sx={{ pt: 3 }}>
-      <Typography component="h6" sx={{ mb: 3 }}>
+    <div className="pt-3">
+      <h6 className="mb-3">
         Delete your account and all of your source data. This is irreversible.
-      </Typography>
+      </h6>
 
-      <Button
-        size="large"
-        type="submit"
-        variant="outlined"
-        color="error"
-        onClick={handleDelete}
-      >
+      <Button size="lg" type="submit" variant="error" onClick={handleDelete}>
         Delete Account
       </Button>
-    </Box>
+    </div>
   );
 };
 

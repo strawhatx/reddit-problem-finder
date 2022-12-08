@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Box,
-  TextField,
-  Typography,
-  Card,
-  CardHeader,
-  CardContent,
-} from "@mui/material";
+import { Box, Typography, Card, CardHeader, CardContent } from "@mui/material";
 import { useTheme } from "@mui/system";
 import logo from "../../assets/images/logo.svg";
 import ForgotPasswordForm from "./components/Form";

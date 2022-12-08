@@ -2,13 +2,15 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { Alert, AlertTitle } from "@mui/material";
+import { Alert } from "react-bootstrap";
+
+import "./notification.css";
 
 const Notification = ({ title, message, severity }) => {
   return (
-    <Alert severity={severity} sx={{ width: "100%", my: 2 }}>
-      <AlertTitle>{title}</AlertTitle>
-      {message}
+    <Alert variant={severity} className="w-100 my-2">
+      <Alert.Heading>{title}</Alert.Heading>
+      <p>{message}</p>
     </Alert>
   );
 };

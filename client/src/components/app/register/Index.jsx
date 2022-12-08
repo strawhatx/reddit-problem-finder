@@ -1,31 +1,22 @@
 import React, { useState } from "react";
-import { Box, Typography, Card, CardHeader, CardContent } from "@mui/material";
-import { useTheme } from "@mui/system";
+import { Card } from "react-bootstrap";
 import { Notification } from "../Notification";
 import logo from "../../assets/images/logo.svg";
 import RegisterForm from "./components/Form";
 
 const RegisterView = () => {
   const [message, setMessage] = useState(null);
-  const theme = useTheme();
 
   return (
     <>
       <Card>
-        <CardHeader />
-        <CardContent>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography
-              variant="span"
+        <Card.Header />
+        <Card.Body>
+          <div className="d-flex flex-column align-items-center">
+            <span
               sx={{
-                width: theme.spacing(10),
-                height: theme.spacing(10),
+                width: 80,
+                height: 80,
                 backgroundImage: `url(${logo})`,
                 backgroundSize: "100%",
                 backgroundPosition: "center",
@@ -33,23 +24,11 @@ const RegisterView = () => {
                 backgroundRepeat: "no-repeat",
                 borderRadius: theme.spacing(12.4),
               }}
-            ></Typography>
-            <Typography
-              variant="h6"
-              sx={{ mt: theme.spacing(2), mb: theme.spacing(0.5) }}
-            >
-              Sign Up
-            </Typography>
-            <Typography
-              variant="p"
-              sx={{
-                pb: theme.spacing(2),
-                fontWeight: theme.typography.fontWeightMedium,
-                color: theme.palette.grey[500],
-              }}
-            >
-              To start using CryptoWatch
-            </Typography>
+            ></span>
+            <h6 className="mt-2 mb-1"> Sign Up</h6>
+            <p className="pb-2 fw-semibold grey[500]">
+              To start using Reddit Proble finder
+            </p>
 
             {message && (
               <Notification
@@ -59,11 +38,11 @@ const RegisterView = () => {
               />
             )}
 
-            <Box sx={{ width: "100%", pt: theme.spacing(1) }}>
+            <div className="w-100 pt-1">
               <RegisterForm setMessage={setMessage} />
-            </Box>
-          </Box>
-        </CardContent>
+            </div>
+          </div>
+        </Card.Body>
       </Card>
     </>
   );

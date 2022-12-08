@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Tabs, Tab, Box, Typography } from "@mui/material";
+import { Tabs, Tab } from "react-bootstrap";
 import TabPanel from "./components/Panel";
 import { useTheme } from "@mui/system";
 
@@ -21,32 +21,18 @@ const NavTabs = ({ title, tabItems = [] }) => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          mb: theme.spacing(1),
-        }}
-      >
-        <Typography variant="h5" sx={{ fontWeight: 400 }}>
-          {title}
-        </Typography>
-        <Box
-          sx={{
+    <div className="w-100 p-3">
+      <div className="d-flex align-items-center mb-2">
+        <h5 className="fw-semibold">{title}</h5>
+        <div
+          className="mx-28"
+          style={{
             height: "38px",
-            width: theme.spacing(0.1),
+            width: "2px",
             background: "rgb(216, 216, 216)",
-            mx: theme.spacing(3.4),
           }}
-        ></Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            flexWrap: "wrap",
-          }}
-        >
+        ></div>
+        <div className="d-flex align-items-center flex-wrap">
           <Tabs
             value={value}
             onChange={handleChange}
@@ -56,15 +42,15 @@ const NavTabs = ({ title, tabItems = [] }) => {
               <Tab key={item.title} label={item.title} {...tabProps(index)} />
             ))}
           </Tabs>
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       {tabItems.map((item, index) => (
         <TabPanel key={item.title} value={value} index={index}>
           {item.content}
         </TabPanel>
       ))}
-    </Box>
+    </div>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box } from "@mui/material";
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -13,7 +12,7 @@ const TabPanel = (props) => {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ mt: 3 }}>{children}</Box>}
+      {value === index && <div className="mt-3">{children}</div>}
     </div>
   );
 };

@@ -9,9 +9,7 @@ const Layout = ({ children, hasNav }) => {
 
       <main>{children}</main>
 
-      <footer style={{ textAlign: "center" }}>
-        Crypto Design Created by ME!
-      </footer>
+      <footer className="text-center">problem finder Created by ME!</footer>
     </>
   );
 };
