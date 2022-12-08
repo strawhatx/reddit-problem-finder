@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Avatar, Box, Button, Input, useTheme } from "@mui/material";
+import { Button } from "react-bootstrap";
 import useAuthStore from "../../../../../stores/authentication";
 import { axios } from "../../../../../config/axios";
 import { storage, getDownloadURL, ref } from "../../../../../config/firebase";
 
 const UserProfileBasicInfoImage = () => {
-  const theme = useTheme();
   const [photoUrl, setPhotoUrl] = useState("");
 
   const { currentUser, update } = useAuthStore((state) => ({
@@ -43,32 +42,33 @@ const UserProfileBasicInfoImage = () => {
 
   return (
     <>
-      <Box sx={{ pt: 3, alignItems: "center", display: "flex" }}>
-        <Avatar
+      <div className="s-flex align-items-center pt-3">
+        <img
           src={photoUrl}
+          class="img-thumbnail mr-2"
+          width="64"
+          height="64"
           alt={currentUser?.displayName}
-          sx={{ width: 64, height: 64, mr: 2 }}
-        />
+        ></img>
+
         <label htmlFor="contained-button-file">
-          <Input
+          <input
             accept="image/*"
             id="contained-button-file"
             type="file"
             onChange={handleChange}
-            sx={{ display: "none" }}
+            className="d-none"
           />
           <Button
-            color="inherit"
-            size="large"
+            variant="primary"
+            size="lg"
             aria-label="change image"
-            component="span"
-            variant="text"
-            sx={{ padding: theme.spacing(1.1, 2) }}
+            className="py-1 px-2"
           >
             Change
           </Button>
         </label>
-      </Box>
+      </div>
     </>
   );
 };

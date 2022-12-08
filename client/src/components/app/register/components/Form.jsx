@@ -38,11 +38,6 @@ const RegisterForm = ({ setMessage }) => {
       onSubmit={(values) => {
         register(values.email, values.password, values.subscribe)
           .then(async (response) => {
-            await response.user.updateProfile({
-              displayName: values.email,
-              //role: "FREETRIAL",
-            });
-
             await axios.post("/accounts/", {
               uid: response.user.uid,
               email: response.user.email,
@@ -81,7 +76,7 @@ const RegisterForm = ({ setMessage }) => {
               htmlFor="password"
               className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
             >
-              Email
+              Password
             </label>
             <Field
               name="password"
@@ -99,7 +94,7 @@ const RegisterForm = ({ setMessage }) => {
               htmlFor="confirmpassword"
               className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
             >
-              Email
+              Confirm Password
             </label>
             <Field
               name="confirmpassword"

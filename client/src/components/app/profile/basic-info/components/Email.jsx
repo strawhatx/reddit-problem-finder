@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, TextField, Button } from "@mui/material";
+import { Button } from "react-bootstrap";
 import useAuthStore from "../../../../../stores/authentication";
 import { axios } from "../../../../../config/axios";
 
@@ -35,20 +35,24 @@ const UserProfileBasicInfoEmailField = () => {
   }, [currentUser?.email]);
 
   return (
-    <Box sx={{ display: "flex", mt: 4, alignItems: "center", width: "100%" }}>
-      <TextField
-        fullWidth
+    <div className="d-flex mt-4 align-items-center w-100">
+      <label
+        htmlFor="email"
+        className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+      >
+        Email Address
+      </label>
+      <input
+        className="mt-24 w-100 flex-grow-1"
         type="email"
-        label="Email Address"
         onInput={handleChange}
-        sx={{ margin: "0px 24px 0px 0px", flexGrow: 1 }}
         value={email}
       />
 
-      <Button size="large" type="submit" variant="text" onClick={handleSubmit}>
+      <Button size="lg" type="submit" variant="prinary" onClick={handleSubmit}>
         Update
       </Button>
-    </Box>
+    </div>
   );
 };
 

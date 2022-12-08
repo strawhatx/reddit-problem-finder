@@ -1,26 +1,13 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Icon,
-  IconButton,
-  InputAdornment,
-  TextField,
-} from "@mui/material";
-import { LoadingButton } from "@mui/lab";
-import { Form, FormikProvider, useFormik } from "formik";
+import React from "react";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import eyeFill from "@iconify/icons-eva/eye-fill";
-import eyeOffFill from "@iconify/icons-eva/eye-off-fill";
+import { Button } from "react-bootstrap";
 import useAuthStore from "../../../../../stores/authentication";
 
 const UserProfileChangePasswordView = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
   const { update } = useAuthStore((state) => ({
     update: state.updatePassword,
   }));
-
-  const initialValues = { password: "" };
 
   const schema = Yup.object().shape({
     password: Yup.string()
@@ -29,62 +16,51 @@ const UserProfileChangePasswordView = () => {
       .required("Password is required"),
   });
 
-  const formik = useFormik({
-    initialValues: initialValues,
-    validationSchema: schema,
-    onSubmit: async (values, { setSubmitting, resetForm }) => {
-      await update(values.password) //, values.rememberMe || false)
-        .then(() => {
-          setSubmitting(false);
-          resetForm(initialValues);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-  });
-
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = formik;
-
   return (
-    <FormikProvider value={formik}>
-      <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-        <Box
-          sx={{ display: "flex", mt: 4, alignItems: "center", width: "100%" }}
-        >
-          <TextField
-            fullWidth
-            autoComplete="current-password"
-            type={showPassword ? "text" : "password"}
-            label="Password"
-            {...getFieldProps("password")}
-            sx={{ margin: "0px 24px 0px 0px", flexGrow: 1 }}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    edge="end"
-                    onClick={() => setShowPassword((prev) => !prev)}
-                  >
-                    <Icon icon={showPassword ? eyeFill : eyeOffFill} />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-            error={Boolean(touched.password && errors.password)}
-            helperText={touched.password && errors.password}
-          />
-          <LoadingButton
-            size="large"
-            type="submit"
-            variant="text"
-            loading={isSubmitting}
-          >
-            Edit
-          </LoadingButton>
-        </Box>
-      </Form>
-    </FormikProvider>
+    <Formik
+      initialValues={{ password: "" }}
+      validationSchema={schema}
+      onSubmit={async (values) => {
+        await update(values.password) //, values.rememberMe || false)
+          .catch((error) => {
+            console.log(error);
+          });
+      }}
+    >
+      {({ errors, touched }) => (
+        <Form>
+          <div className="d-flex mt-4 align-items-center w-100">
+            <div className="mt-4">
+              <label
+                htmlFor="password"
+                className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+              >
+                Password
+              </label>
+              <Field
+                name="password"
+                className="block w-full px-4 py-2 text-gray-700"
+                type="password"
+              />
+
+              {errors.password && touched.password ? (
+                <div>{errors.password}</div>
+              ) : null}
+            </div>
+
+            <div className="mt-8">
+              <Button
+                variant="primary"
+                className="w-full px-4 py-2 tracking-wide text-white"
+                type="submit"
+              >
+                Edit
+              </Button>
+            </div>
+          </div>
+        </Form>
+      )}
+    </Formik>
   );
 };
 

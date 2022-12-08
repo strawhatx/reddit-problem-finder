@@ -1,19 +1,16 @@
 import React from "react";
-import { Card, Box, Typography } from "@mui/material";
-import UserProfileBasicInfoDisplayNameField from "./components/DisplayName";
+import { Card } from "react-bootstrap";
 import UserProfileBasicInfoEmailField from "./components/Email";
 import UserProfileBasicInfoImage from "./components/Image";
 
 const UserProfileBasicInfo = () => {
   return (
-    <Card sx={{ padding: 3 }}>
-      <Box>
-        <Typography component="h5" sx={{ fontWeight: 600 }}>
-          Basic Details
-        </Typography>
-      </Box>
+    <Card classNames="p-3">
+      <div>
+        <h5 className="fw-bolder">Basic Details</h5>
+      </div>
+
       <UserProfileBasicInfoImage />
-      <UserProfileBasicInfoDisplayNameField />
       <UserProfileBasicInfoEmailField />
     </Card>
   );

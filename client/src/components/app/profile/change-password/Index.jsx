@@ -1,15 +1,13 @@
 import React from "react";
-import { Card, Box, Typography } from "@mui/material";
+import { Card } from "react-bootstrap";
 import UserProfileChangePasswordView from "./components/ChangePassword";
 
 const UserProfileChangePassword = () => {
   return (
-    <Card sx={{ padding: 3, mt: 4 }}>
-      <Box>
-        <Typography component="h5" sx={{ fontWeight: 600 }}>
-          Change Password
-        </Typography>
-      </Box>
+    <Card className="p-3 mt-4">
+      <div>
+        <h5 className="fw-bolder">Change Password</h5>
+      </div>
       <UserProfileChangePasswordView />
     </Card>
   );
