@@ -1,31 +1,22 @@
 import React, { useState } from "react";
-import { Box, Typography, Card, CardHeader, CardContent } from "@mui/material";
-import { useTheme } from "@mui/system";
 import logo from "../../assets/images/logo.svg";
 import LoginForm from "./components/Form";
 import { Notification } from "../../Notification";
+import { Card } from "react-bootstrap";
 
 const LoginView = () => {
   const [message, setMessage] = useState(null);
-  const theme = useTheme();
 
   return (
     <>
       <Card>
-        <CardHeader />
-        <CardContent>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography
-              variant="span"
-              sx={{
-                width: theme.spacing(10),
-                height: theme.spacing(10),
+        <Card.Header />
+        <Card.Body>
+          <div className="d-flex flex-column align-items-center">
+            <span
+              style={{
+                width: 10,
+                height: 10,
                 backgroundImage: `url(${logo})`,
                 backgroundSize: "100%",
                 backgroundPosition: "center",
@@ -33,23 +24,11 @@ const LoginView = () => {
                 backgroundRepeat: "no-repeat",
                 borderRadius: theme.spacing(12.4),
               }}
-            ></Typography>
-            <Typography
-              variant="h6"
-              sx={{ mt: theme.spacing(2), mb: theme.spacing(0.5) }}
-            >
-              Sign In
-            </Typography>
-            <Typography
-              variant="p"
-              sx={{
-                pb: theme.spacing(2),
-                fontWeight: theme.typography.fontWeightMedium,
-                color: theme.palette.grey[500],
-              }}
-            >
+            ></span>
+            <h6 className="mt-2 mb-1">Sign In</h6>
+            <p className="pb-2 fw-semibold text-muted">
               To start using CryptoWatch
-            </Typography>
+            </p>
 
             {message && (
               <Notification
@@ -59,11 +38,11 @@ const LoginView = () => {
               />
             )}
 
-            <Box sx={{ width: "100%", pt: theme.spacing(1) }}>
+            <div className="w-100 pt-1">
               <LoginForm setMessage={setMessage} />
-            </Box>
-          </Box>
-        </CardContent>
+            </div>
+          </div>
+        </Card.Body>
       </Card>
     </>
   );
