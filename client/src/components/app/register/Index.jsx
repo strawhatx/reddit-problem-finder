@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import { Notification } from "../Notification";
-import logo from "../../assets/images/logo.svg";
 import RegisterForm from "./components/Form";
 
 const RegisterView = () => {
@@ -17,7 +16,7 @@ const RegisterView = () => {
               sx={{
                 width: 80,
                 height: 80,
-                backgroundImage: `url(${logo})`,
+                backgroundColor: `black`,
                 backgroundSize: "100%",
                 backgroundPosition: "center",
                 boxShadow: "0px 3px 6px rgb(0 0 0 / 7%)",

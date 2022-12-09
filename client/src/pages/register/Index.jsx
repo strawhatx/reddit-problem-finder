@@ -1,15 +1,15 @@
 import React from "react";
-import { Box, Container } from "@mui/material";
+import { Container } from "react-bootstrap";
 import RegisterView from "../../components/register/Index";
 
 const Register = () => {
   return (
     <>
-      <Box sx={{ py: 10 }}>
-        <Container maxWidth="xs">
+      <div sx={{ py: 10 }}>
+        <Container fluid="xs">
           <RegisterView />
         </Container>
-      </Box>
+      </div>
     </>
   );
 };

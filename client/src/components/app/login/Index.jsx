@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "../../assets/images/logo.svg";
 import LoginForm from "./components/Form";
 import { Notification } from "../../Notification";
 import { Card } from "react-bootstrap";
@@ -17,7 +16,7 @@ const LoginView = () => {
               style={{
                 width: 10,
                 height: 10,
-                backgroundImage: `url(${logo})`,
+                backgroundColor: `black`,
                 backgroundSize: "100%",
                 backgroundPosition: "center",
                 boxShadow: "0px 3px 6px rgb(0 0 0 / 7%)",

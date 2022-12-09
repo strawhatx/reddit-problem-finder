@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../assets/images/coins-logo-black.png";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import useAuthStore from "../stores/authentication";
 
@@ -32,9 +31,7 @@ const Navbar = () => {
   return (
     <div className="flex-grow-1">
       <Navbar position="fixed" bg={color}>
-        <Navbar.Brand href="/">
-          <img src={logo} alt="logo" />
-        </Navbar.Brand>
+        <Navbar.Brand href="/">RP</Navbar.Brand>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
