@@ -1,15 +1,15 @@
 import React from "react";
-import { Box, Container } from "@mui/material";
+import { Container } from "react-bootstrap";
 import ForgotPasswordView from "../../components/app/forgot-password/Index";
 
 const ForgotPassword = () => {
   return (
     <>
-      <Box sx={{ py: 10 }}>
+      <div className="py-10">
         <Container maxWidth="xs">
           <ForgotPasswordView />
         </Container>
-      </Box>
+      </div>
     </>
   );
 };

@@ -15,14 +15,14 @@ const ForgotPasswordView = () => {
           <div className="d-flex flex-column align-items-center">
             <span
               sx={{
-                width: theme.spacing(10),
-                height: theme.spacing(10),
+                width: 10,
+                height: 10,
                 backgroundColor: `black`,
                 backgroundSize: "100%",
                 backgroundPosition: "center",
                 boxShadow: "0px 3px 6px rgb(0 0 0 / 7%)",
                 backgroundRepeat: "no-repeat",
-                borderRadius: theme.spacing(12.4),
+                borderRadius: 12.4,
               }}
             ></span>
             <h6 className="mt-2 mb-1">Enter Email</h6>

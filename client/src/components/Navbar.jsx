@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import React, { useState } from "react";
+import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import useAuthStore from "../stores/authentication";
 
-const Navbar = () => {
+const AppNavbar = () => {
+  const navigate = useNavigate();
+
   const [color, setColor] = useState("transparent");
 
   const { currentUser, logout } = useAuthStore((state) => ({
@@ -30,45 +33,72 @@ const Navbar = () => {
 
   return (
     <div className="flex-grow-1">
-      <Navbar position="fixed" bg={color}>
-        <Navbar.Brand href="/">RP</Navbar.Brand>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+      <Navbar position="fixed" expand="md" bg={color}>
+        <Container fluid="lg">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Brand href="/">
+            <h5 className="align-right me-3 mb-0">
+              <span className="border border-2 rounded-circle p-1">
+                <strong>RP</strong>
+              </span>{" "}
+              Problem Finder
+            </h5>
+          </Navbar.Brand>
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link className="me-3" href="/">
+                Home
+              </Nav.Link>
 
-            {currentUser && <Nav.Link href="/search">Home</Nav.Link>}
+              {currentUser && (
+                <Nav.Link className="me-3" href="/search">
+                  Search
+                </Nav.Link>
+              )}
 
-            {currentUser && <Nav.Link href="/my-account">Home</Nav.Link>}
-          </Nav>
-
-          {!currentUser && (
-            <Nav>
-              <Nav.Link href="/signin">Sign In</Nav.Link>
-              <Nav.Link href="/signup">Sign Up</Nav.Link>
+              {currentUser && <Nav.Link href="/my-account">Account</Nav.Link>}
             </Nav>
-          )}
 
-          {currentUser && (
-            <Nav>
-              <NavDropdown
-                title={currentUser.email}
-                id="navbarScrollingDropdown"
-              >
-                <NavDropdown.Item href="/my-account">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="/my-account">
-                  My Account
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item onClick={handleSignOut}>
-                  Sign out{" "}
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          )}
-        </Navbar.Collapse>
+            {!currentUser && (
+              <Nav>
+                <Nav.Link className="me-3" href="/signin">
+                  Sign In
+                </Nav.Link>
+
+                <Button
+                  variant="primary"
+                  className="w-full px-4 py-2 tracking-wide text-white"
+                  href="/signup"
+                >
+                  Sign up
+                </Button>
+              </Nav>
+            )}
+
+            {currentUser && (
+              <Nav>
+                <NavDropdown
+                  title={currentUser.email}
+                  id="navbarScrollingDropdown"
+                >
+                  <NavDropdown.Item href="/my-account">
+                    Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/my-account">
+                    My Account
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={handleSignOut}>
+                    Sign out{" "}
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            )}
+          </Navbar.Collapse>
+        </Container>
       </Navbar>
     </div>
   );
 };
 
-export default Navbar;
+export default AppNavbar;

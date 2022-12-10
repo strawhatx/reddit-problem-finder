@@ -4,8 +4,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Alert } from "react-bootstrap";
 
-import "./notification.css";
-
 const Notification = ({ title, message, severity }) => {
   return (
     <Alert variant={severity} className="w-100 my-2">

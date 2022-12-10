@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
+import AppNavbar from "./Navbar";
 import PropTypes from "prop-types";
 
 const Layout = ({ children, hasNav }) => {
   return (
     <>
-      {hasNav && <Navbar />}
+      {hasNav && <AppNavbar />}
 
       <main>{children}</main>
 

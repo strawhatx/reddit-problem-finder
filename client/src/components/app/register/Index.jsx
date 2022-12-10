@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import { Notification } from "../Notification";
+import { Notification } from "../../Notification";
 import RegisterForm from "./components/Form";
 
 const RegisterView = () => {
@@ -21,7 +21,7 @@ const RegisterView = () => {
                 backgroundPosition: "center",
                 boxShadow: "0px 3px 6px rgb(0 0 0 / 7%)",
                 backgroundRepeat: "no-repeat",
-                borderRadius: theme.spacing(12.4),
+                borderRadius: 12.4,
               }}
             ></span>
             <h6 className="mt-2 mb-1"> Sign Up</h6>

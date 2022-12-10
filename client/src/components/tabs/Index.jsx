@@ -2,12 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Tabs, Tab } from "react-bootstrap";
 import TabPanel from "./components/Panel";
-import { useTheme } from "@mui/system";
 
 const NavTabs = ({ title, tabItems = [] }) => {
   const [value, setValue] = React.useState(0);
-
-  const theme = useTheme();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

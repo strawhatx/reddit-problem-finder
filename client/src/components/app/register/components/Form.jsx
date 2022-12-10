@@ -3,8 +3,8 @@ import { Formik, Form, Field } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 import { Button } from "react-bootstrap";
-import { useAuthStore } from "../../../stores/authentication";
-import { axios } from "../../../config/axios";
+import { useAuthStore } from "../../../../stores/authentication";
+import { axios } from "../../../../config/axios";
 
 const RegisterForm = ({ setMessage }) => {
   const { register } = useAuthStore((state) => ({ register: state.register }));

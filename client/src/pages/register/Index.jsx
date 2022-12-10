@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import RegisterView from "../../components/register/Index";
+import RegisterView from "../../components/app/register/Index";
 
 const Register = () => {
   return (
