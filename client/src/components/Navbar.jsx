@@ -18,8 +18,6 @@ const AppNavbar = () => {
   };
 
   const handleNavColor = () => {
-    console.log(window.scrollY);
-
     let height = window.screen.width > 600 ? 80 : 64;
 
     if (window.scrollY >= height) {
