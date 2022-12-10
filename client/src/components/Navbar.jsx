@@ -6,7 +6,7 @@ import useAuthStore from "../stores/authentication";
 const AppNavbar = () => {
   const navigate = useNavigate();
 
-  const [color, setColor] = useState("transparent");
+  const [color, setColor] = useState("light");
 
   const { currentUser, logout } = useAuthStore((state) => ({
     currentUser: state.currentUser,
@@ -23,9 +23,9 @@ const AppNavbar = () => {
     let height = window.screen.width > 600 ? 80 : 64;
 
     if (window.scrollY >= height) {
-      setColor("primary");
+      setColor("white");
     } else {
-      setColor("transparent");
+      setColor("light");
     }
   };
 
@@ -33,7 +33,7 @@ const AppNavbar = () => {
 
   return (
     <div className="flex-grow-1">
-      <Navbar position="fixed" expand="md" bg={color}>
+      <Navbar position="fixed" expand="md" bg={color} style={{ height: 80 }}>
         <Container fluid="lg">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Brand href="/">
