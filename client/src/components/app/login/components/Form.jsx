@@ -50,7 +50,7 @@ const LoginForm = ({ setMessage }) => {
     >
       {({ errors, touched }) => (
         <Form>
-          <div className="mt-4">
+          <div className="form-group mt-4">
             <label
               htmlFor="email"
               className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
@@ -59,14 +59,14 @@ const LoginForm = ({ setMessage }) => {
             </label>
             <Field
               name="email"
-              className="block w-full px-4 py-2 text-gray-700"
+              className="block w-full form-control px-4 py-2 text-gray-700"
               type="text"
             />
 
             {errors.email && touched.email ? <div>{errors.email}</div> : null}
           </div>
 
-          <div className="mt-3">
+          <div className="form-group mt-3">
             <div className="d-flex flex-column align-items-end mb-1">
               <Link
                 className="text-decoration-none align-content-end text-dark"
@@ -85,7 +85,7 @@ const LoginForm = ({ setMessage }) => {
               </label>
               <Field
                 name="password"
-                className="block w-full px-4 py-2 text-gray-700"
+                className="block w-full form-control px-4 py-2 text-gray-700"
                 type="password"
               />
 
@@ -98,8 +98,7 @@ const LoginForm = ({ setMessage }) => {
           <div className="mt-4">
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
-                <Field type="checkbox" name="rememberme" />
-                Remember me.
+                <Field type="checkbox" name="rememberme" /> Remember me.
               </label>
 
               {errors.rememberMe && touched.rememberMe ? (
@@ -108,7 +107,7 @@ const LoginForm = ({ setMessage }) => {
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="d-flex justify-content-end mt-8">
             <Button
               variant="primary"
               className="w-full px-4 py-2 tracking-wide text-white"

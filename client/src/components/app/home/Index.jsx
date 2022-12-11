@@ -11,7 +11,7 @@ const HomeView = () => {
       >
         <Container fluid="sm">
           <Row className="justify-content-md-center mb-3">
-            <Col className="d-flex justify-content-center  flex-column">
+            <Col className="d-flex justify-content-center flex-column">
               <h2 className="display-4">
                 Find user issues on
                 <br />
