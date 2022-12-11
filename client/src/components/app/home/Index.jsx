@@ -1,42 +1,27 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import reddit_img from "../../../assets/images/reddit-search.png";
 
 const HomeView = () => {
   return (
     <>
       <div
         className="d-flex justify-content-center align-items-center flex-column bg-light text-dark"
-        style={{ height: "100vh" }}
+        style={{ height: "89vh" }}
       >
-        <Container fluid="xs">
-          <Row className="justify-content-md-center">
-            <Col>
-              <h2 className="display-4 text-center">
-                Find user issues on Reddit
+        <Container fluid="sm">
+          <Row className="justify-content-md-center mb-3">
+            <Col className="d-flex justify-content-center  flex-column">
+              <h2 className="display-4">
+                Find user issues on
+                <br />
+                Reddit
               </h2>
 
-              <p className="lead mb-4 text-center">
+              <p className="lead mb-4">
                 Search the Reddit database for user issues with
                 <br />
                 user defined queries.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p>
-                Flash sales and promotions are the top reasons people opt in to
-                text messages from businesses. If you’re running a promotion and
-                want your customers to take action immediately, there’s hardly a
-                more proven method of getting the word out than text. You’re
-                almost guaranteed a sharp boost in revenue and quick returns on
-                your investment.
-                <br />
-                <br />
-                Start by offering your customers a reward when they text in a
-                keyword. This message can appear as a pop-up on your website
-                with a widget that directly inputs the keyword on their text
-                messaging app.
               </p>
 
               <div className="mt-8">
@@ -49,12 +34,12 @@ const HomeView = () => {
                 </Button>
               </div>
             </Col>
-            <Col>
+            <Col className="d-flex justify-content-end">
               <img
-                src=""
-                class="img-thumbnail me-2"
-                width="100"
-                height="400"
+                src={reddit_img}
+                className="rounded"
+                width="600"
+                height="500"
                 alt="app-previews"
               ></img>
             </Col>

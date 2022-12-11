@@ -45,7 +45,7 @@ const UserProfileBasicInfoImage = () => {
       <div className="s-flex align-items-center pt-3">
         <img
           src={photoUrl}
-          class="img-thumbnail me-2"
+          className="img-thumbnail me-2"
           width="64"
           height="64"
           alt={currentUser?.displayName}

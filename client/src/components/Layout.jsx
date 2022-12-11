@@ -2,20 +2,23 @@ import React from "react";
 import AppNavbar from "./Navbar";
 import PropTypes from "prop-types";
 
-const Layout = ({ children, hasNav }) => {
+const Layout = ({ children, hasNav, hasFooter }) => {
   return (
     <>
       {hasNav && <AppNavbar />}
 
       <main>{children}</main>
 
-      <footer className="text-center">problem finder Created by ME!</footer>
+      {hasFooter && (
+        <footer className="text-center">problem finder Created by ME!</footer>
+      )}
     </>
   );
 };
 
 Layout.propTypes = {
   hasNav: PropTypes.bool.isRequired,
+  hasFooter: PropTypes.bool.isRequired,
   children: PropTypes.element.isRequired,
 };
 
