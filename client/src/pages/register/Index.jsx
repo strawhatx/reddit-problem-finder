@@ -1,17 +1,8 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import RegisterView from "../../components/app/register/Index";
 
 const Register = () => {
-  return (
-    <>
-      <div sx={{ py: 10 }}>
-        <Container fluid="xs">
-          <RegisterView />
-        </Container>
-      </div>
-    </>
-  );
+  return <RegisterView />;
 };
 
 export default Register;
