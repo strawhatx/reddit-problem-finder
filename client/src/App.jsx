@@ -7,6 +7,7 @@ import Register from "./pages/register/Index";
 import ForgotPassword from "./pages/forgot-password/Index";
 import UserProfile from "./pages/profile/Index";
 import { ThemeProvider } from "react-bootstrap";
+import Search from "./pages/search/Index";
 
 const App = () => {
   return (
@@ -61,6 +62,13 @@ const App = () => {
                 hasNav={false}
                 hasFooter={false}
               />
+            }
+          />
+          <Route
+            exact
+            path="/search"
+            element={
+              <Layout children={<Search />} hasNav={true} hasFooter={true} />
             }
           />
         </Routes>

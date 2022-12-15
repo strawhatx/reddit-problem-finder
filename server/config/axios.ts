@@ -3,9 +3,8 @@ import _axios from "axios";
 const reddit_uri = process.env.REDDIT_URI;
 const reddit_token = process.env.REDDIT_ACCESS;
 
-const coins_api = _axios.create({
-  baseURL: coins_uri,
-  headers: { "x-access-token": coins_token ?? "" },
+const reddit_api = _axios.create({
+  baseURL: reddit_uri,
   withCredentials: true,
 });
 
