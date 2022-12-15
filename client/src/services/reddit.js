@@ -9,7 +9,7 @@ export const Reddit = {
   error: false,
   posts: [],
 
-  getPosts: function () {
+  getPosts: function (setPosts) {
     let cancel;
 
     axios({
@@ -24,8 +24,22 @@ export const Reddit = {
       cancelToken: new _axios.CancelToken((c) => (cancel = c)),
     })
       .then((res) => {
-        this.posts = res.data?.data?.children.map((i) => i.data);
+        this.posts = res.data?.data?.children.map((i) => {
+          return {
+            author: i.data.author,
+            title: i.data.title,
+            text: i.data.selftext,
+            html: i.data.selftext_html,
+            comments: i.data.num_comments,
+            date: i.data.created_utc,
+            upvotes: i.data.ups ?? 0,
+            downvotes: i.data.down ?? 0,
+          };
+        });
+
         console.log(this.posts);
+
+        setPosts(this.posts);
       })
       .catch((e) => {
         if (_axios.isCancel(e)) return;

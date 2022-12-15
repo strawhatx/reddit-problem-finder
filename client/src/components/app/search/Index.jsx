@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import search_img from "../../../assets/svg/search.svg";
 import { Reddit } from "../../../services/reddit";
+import Posts from "../../Posts";
 
 const SearchView = () => {
+  const [posts, setPosts] = useState([]);
+
   return (
     <>
-      <div
-        className="d-flex justify-content-center bg-light text-dark"
-        style={{ height: "80vh" }}
-      >
+      <div className="d-flex h-100 justify-content-center bg-light text-dark">
         <Container fluid="md">
           <div className="row height d-flex justify-content-center align-items-center pt-4">
-            <div className="col-md-6">
+            <div className="col-md-12">
               <div className="form">
                 <div className="p-1 bg-white rounded rounded-pill shadow-sm mb-4">
                   <div className="input-group">
@@ -28,7 +28,7 @@ const SearchView = () => {
                         id="button-addon1"
                         type="submit"
                         className="btn btn-link text-primary"
-                        onClick={() => Reddit.getPosts()}
+                        onClick={() => Reddit.getPosts(setPosts)}
                       >
                         <img
                           src={search_img}
@@ -41,6 +41,12 @@ const SearchView = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="row height d-flex justify-content-center align-items-center pt-4">
+            <div className="col-md-12">
+              <Posts items={posts} />
             </div>
           </div>
         </Container>
