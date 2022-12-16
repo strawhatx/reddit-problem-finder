@@ -31,13 +31,14 @@ export const Reddit = {
             text: i.data.selftext,
             html: i.data.selftext_html,
             comments: i.data.num_comments,
-            date: i.data.created_utc,
+            date: i.data.created,
+            dateutc: i.data.created_utc,
             upvotes: i.data.ups ?? 0,
             downvotes: i.data.down ?? 0,
           };
         });
 
-        console.log(this.posts);
+        console.log(res.data?.data?.children);
 
         setPosts(this.posts);
       })
