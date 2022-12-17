@@ -12,7 +12,7 @@ const SearchView = () => {
       <div className="d-flex h-100 justify-content-center bg-light text-dark">
         <Container fluid="md">
           <div className="row height d-flex justify-content-center align-items-center pt-4">
-            <div className="col-md-12">
+            <div className="col-sm-12 col-md-12 col-lg-8">
               <div className="form">
                 <div className="p-1 bg-white rounded rounded-pill shadow-sm mb-4">
                   <div className="input-group">
@@ -45,7 +45,7 @@ const SearchView = () => {
           </div>
 
           <div className="row height d-flex justify-content-center align-items-center pt-4">
-            <div className="col-md-12">
+            <div className="col-sm-12 col-md-12 col-lg-8">
               <Posts items={posts} />
             </div>
           </div>

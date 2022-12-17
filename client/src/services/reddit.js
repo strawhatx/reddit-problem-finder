@@ -4,7 +4,7 @@ import _axios from "axios";
 export const Reddit = {
   last: "",
   search: "",
-  size: 25,
+  size: 50,
   sortBy: "relevance",
   error: false,
   posts: [],
@@ -26,15 +26,18 @@ export const Reddit = {
       .then((res) => {
         this.posts = res.data?.data?.children.map((i) => {
           return {
+            id: i.data.id,
             author: i.data.author,
             title: i.data.title,
             text: i.data.selftext,
             html: i.data.selftext_html,
             comments: i.data.num_comments,
+            thumbnail: i.data.thumbnail,
+            thumbnailHeight: i.data.thumbnail_height,
+            thumbnailWidth: i.data.thumbnail_width,
             date: i.data.created,
-            dateutc: i.data.created_utc,
-            upvotes: i.data.ups ?? 0,
-            downvotes: i.data.down ?? 0,
+            upVotes: i.data.ups ?? 0,
+            downVotes: i.data.down ?? 0,
           };
         });
 

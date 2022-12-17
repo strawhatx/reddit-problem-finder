@@ -8,6 +8,7 @@ import ForgotPassword from "./pages/forgot-password/Index";
 import UserProfile from "./pages/profile/Index";
 import { ThemeProvider } from "react-bootstrap";
 import Search from "./pages/search/Index";
+import Post from "./pages/post/Index";
 
 const App = () => {
   return (
@@ -69,6 +70,13 @@ const App = () => {
             path="/search"
             element={
               <Layout children={<Search />} hasNav={true} hasFooter={true} />
+            }
+          />
+          <Route
+            exact
+            path="/post/:id"
+            element={
+              <Layout children={<Post />} hasNav={true} hasFooter={true} />
             }
           />
         </Routes>
