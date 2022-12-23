@@ -8,7 +8,7 @@ import ForgotPassword from "./pages/forgot-password/Index";
 import UserProfile from "./pages/profile/Index";
 import { ThemeProvider } from "react-bootstrap";
 import Search from "./pages/search/Index";
-import Post from "./pages/post/Index";
+import Comments from "./pages/comments/Index";
 
 const App = () => {
   return (
@@ -74,9 +74,9 @@ const App = () => {
           />
           <Route
             exact
-            path="/post/:id"
+            path="/comments/:postId"
             element={
-              <Layout children={<Post />} hasNav={true} hasFooter={true} />
+              <Layout children={<Comments />} hasNav={true} hasFooter={true} />
             }
           />
         </Routes>

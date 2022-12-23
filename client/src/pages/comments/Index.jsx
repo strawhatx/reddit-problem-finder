@@ -1,5 +1,5 @@
 import React from "react";
-import PostView from "../../components/app/post/Index";
+import PostView from "../../components/app/comments/Index";
 
 const Post = () => {
   return <PostView />;

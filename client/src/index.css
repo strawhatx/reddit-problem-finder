@@ -12,6 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+a, a:link, a:visited, a:hover, a:active { text-decoration: none; color: inherit; }
+
+.small-links a{
+  font-size: 13px;
+}
+
 input:focus,textarea:focus,.form-control:focus{
   outline: none !important;
   box-shadow: none !important;

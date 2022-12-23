@@ -6,7 +6,8 @@ const router = Router();
 const routes = new RedditController();
 
 //router.get("/", CheckAuth, routes.getUsers);
-router.post("/search", routes.searchPosts)
+router.post("/search", routes.searchPosts);
+router.post("/comments", routes.getPostComments);
 
 export const RedditRoutes = router;
 

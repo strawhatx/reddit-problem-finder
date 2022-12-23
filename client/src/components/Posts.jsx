@@ -23,8 +23,12 @@ const Posts = ({ items }) => {
           .fromNow();
 
         return (
-          <Link to={`/post/${item.id}`}>
-            <Card key={index} className="card-hover-shadow  p-4 mb-3 rounded">
+          <Link
+            key={index}
+            to={`/comments/${item.postId}`}
+            state={{ postId: item.postId, subreddit: item.subreddit }}
+          >
+            <Card className="card-hover-shadow  p-4 mb-3 rounded">
               <Card.Body className="p-1 ">
                 <div className="d-flex justify-content-center align-items-center mb-4 flex-row">
                   <div className="card-text-preview ">
