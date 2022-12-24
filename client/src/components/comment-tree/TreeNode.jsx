@@ -4,7 +4,6 @@ import ReactHtmlParser from "react-html-parser";
 import moment from "moment";
 import he from "he";
 import CommentTree from "./Tree";
-import { Card } from "react-bootstrap";
 
 const CommentTreeNode = ({ node }) => {
   const {
@@ -13,7 +12,6 @@ const CommentTreeNode = ({ node }) => {
     thumbnail,
     thumbnail_width,
     thumbnail_height,
-    num_comments,
     ups,
     downs,
     created,
@@ -38,48 +36,49 @@ const CommentTreeNode = ({ node }) => {
 
   return (
     <>
-      <Card className="card-hover-shadow  p-4 mb-3 rounded">
-        <Card.Body className="p-1 ">
-          <div className="d-flex justify-content-start align-items-start mb-4 flex-row">
-            <div className="small-links">
-              <div className="fw-normal card-text">
-                {ReactHtmlParser(he.decode(body_html))}
-              </div>
+      <div
+        className="pb-3 pt-2"
+        style={{ paddingLeft: "10px", borderLeft: "4px solid lightgrey" }}
+      >
+        <div className="d-flex justify-content-start align-items-start flex-row">
+          <div className="small-links">
+            <div className="fw-normal card-text">
+              {ReactHtmlParser(he.decode(body_html))}
             </div>
-
-            {thumbnail && thumbnail !== "self" && thumbnail !== "default" && (
-              <div className="ms-3">
-                <img
-                  className="rounded"
-                  src={thumbnail}
-                  width={thumbnail_width}
-                  height={thumbnail_height}
-                  alt="search"
-                />
-              </div>
-            )}
           </div>
 
-          <div className="text-secondary fs-7">
-            <span className="fst-italic me-3">
-              Posted by: <span className="fw-semibold">{author}</span>
-            </span>
+          {thumbnail && thumbnail !== "self" && thumbnail !== "default" && (
+            <div className="ms-3">
+              <img
+                className="rounded"
+                src={thumbnail}
+                width={thumbnail_width}
+                height={thumbnail_height}
+                alt="search"
+              />
+            </div>
+          )}
+        </div>
 
-            <span className="fst-italic me-3">
-              Posted: <span className="fw-semibold">{date}</span>
-            </span>
+        <div className="text-secondary fs-7">
+          <span className="fst-italic me-3">
+            Posted by: <span className="fw-semibold">{author}</span>
+          </span>
 
-            <span className="fst-italic me-3">{num_comments} Comments</span>
+          <span className="fst-italic me-3">
+            Posted: <span className="fw-semibold">{date}</span>
+          </span>
 
-            <span className={`fst-italic fw-semibold ${color}`}>
-              {total > 0 && "+"}
-              {Math.abs(total)} Votes
-            </span>
-          </div>
-        </Card.Body>
-      </Card>
+          <span className={`fst-italic fw-semibold ${color}`}>
+            {total > 0 && "+"}
+            {Math.abs(total)} Votes
+          </span>
+        </div>
+      </div>
 
-      {replies && <CommentTree children={replies?.data?.children} />}
+      <div style={{ paddingLeft: "10px", borderLeft: "4px solid lightgrey" }}>
+        {replies && <CommentTree children={replies?.data?.children} />}
+      </div>
     </>
   );
 };

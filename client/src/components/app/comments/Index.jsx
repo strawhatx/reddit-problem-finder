@@ -91,7 +91,11 @@ const PostView = () => {
                 </Card.Body>
               </Card>
 
-              <CommentTree children={comments} />
+              <Card className="card-hover-shadow  p-4 mb-3 rounded">
+                <Card.Body className="p-1 ">
+                  <CommentTree children={comments} />
+                </Card.Body>
+              </Card>
             </div>
           </div>
         </Container>

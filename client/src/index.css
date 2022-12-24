@@ -14,8 +14,10 @@ code {
 
 a, a:link, a:visited, a:hover, a:active { text-decoration: none; color: inherit; }
 
-.small-links a{
-  font-size: 13px;
+.small-links a { 
+  font-size: 13px;  
+  color: lightskyblue;
+  text-decoration: underline;
 }
 
 input:focus,textarea:focus,.form-control:focus{
@@ -55,4 +57,8 @@ input:focus,textarea:focus,.form-control:focus{
 
 .fs-7 {
   font-size: small;
+}
+
+.fs-8 {
+  font-size: smaller;
 }
