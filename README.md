@@ -23,6 +23,8 @@ Reddit-Problem-Search makes it easy for you to find collect, analyze, and monito
 > `REDDIT DEV ACCOUNT`
 > 
 > `FIREBASE DEV ACCOUNT`
+>
+> `Remove # from the .env file names there are 2`
 
 ## App Start
 
