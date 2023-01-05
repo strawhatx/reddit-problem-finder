@@ -11,14 +11,6 @@ Reddit-Problem-Search makes it easy for you to find collect, analyze, and monito
 > Mongo DB
 >
 > Reddit Api
->
-> Twitter Api (coming soon...)
->
-> LinkedIn Api (coming soon...)
->
-> Facebook Api (coming soon...)
->
-> Quora Api (coming soon...)
 
 ## Requirements
 
@@ -27,14 +19,6 @@ Reddit-Problem-Search makes it easy for you to find collect, analyze, and monito
 > `NODEJS`
 >
 > `REDDIT DEV ACCOUNT`
->
-> `TWITTER DEV ACCOUNT`
->
-> `LINKEDIN DEV ACCOUNT`
->
-> `FB DEV ACCOUNT`
->
-> `QUORA DEV ACCOUNT`
 
 ## App Start
 
