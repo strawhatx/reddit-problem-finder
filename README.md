@@ -11,6 +11,8 @@ Reddit-Problem-Search makes it easy for you to find collect, analyze, and monito
 > Mongo DB
 >
 > Reddit Api
+>
+> Firebase
 
 ## Requirements
 
@@ -19,6 +21,8 @@ Reddit-Problem-Search makes it easy for you to find collect, analyze, and monito
 > `NODEJS`
 >
 > `REDDIT DEV ACCOUNT`
+> 
+> `FIREBASE DEV ACCOUNT`
 
 ## App Start
 
